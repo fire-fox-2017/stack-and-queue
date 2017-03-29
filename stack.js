@@ -2,7 +2,7 @@
 
 // Your code implementation
 class Stack {
-  constructor(maxSize) {
+  constructor(maxSize = 5) {
     this._MAX_SIZE = maxSize;
     this._stack = [];
   }
@@ -48,14 +48,19 @@ class Stack {
     // console.log("isfull " + this._MAX_SIZE);
     if(this.size() >= this._MAX_SIZE)
       return true;
-
-    console.log('here')
     return false;
   }
 
   stackPeep() {
     // See the last data
     console.log(this.first());
+  }
+
+  getMax(newMax) {
+    return this._MAX_SIZE;
+  }
+  setMax(newMax) {
+    this._MAX_SIZE = newMax;
   }
 
   // implement queue
@@ -65,7 +70,7 @@ class Stack {
 
 
 // Buat stack baru
-let myStack = new Stack(4)
+let myStack = new Stack();
 
 // cek apakah stack sudah ada isi atau kosong?
 console.log(`The stack is empty? ${myStack.isEmpty()}`) // true
@@ -105,6 +110,15 @@ console.log(myStack.size());
 
 console.log(myStack.stackPop())
 myStack.stackPush("ccaa")
+myStack.stackPeep()
+
+console.log(myStack.getMax());
+myStack.setMax(7);
+console.log(myStack.getMax());
+
+myStack.stackPush("a")
+myStack.stackPush("b")
+myStack.stackPush("c")
 myStack.stackPeep()
 
 
