@@ -70,7 +70,7 @@ class Stack {
 
 
 // Buat stack baru
-let myStack = new Stack();
+let myStack = new Stack(4);
 
 // cek apakah stack sudah ada isi atau kosong?
 console.log(`The stack is empty? ${myStack.isEmpty()}`) // true
@@ -121,6 +121,7 @@ myStack.stackPush("b")
 myStack.stackPush("c")
 myStack.stackPeep()
 
+console.log(myStack.size());
 
 /*
 // Lihat, kita menghapus data sata per satu
