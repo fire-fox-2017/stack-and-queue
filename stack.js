@@ -2,36 +2,81 @@
 
 // Your code implementation
 class Stack {
-  constructor() {
-  }
+    constructor() {
+        this.max_size = 5;
+        this.objStack = [];
+    }
 
-  size() {
-  }
+    showAll() {
+        console.log('Data di stack : ' + this.objStack);
+    }
 
-  stackPush(x) {
-  }
+    size() {
+        console.log('Ukuran stack : ' + this.objStack.length);
+    }
 
-  stackPop() {
-  }
+    stackPush(x) {
+      if(this.objStack.length === this.max_size){
+        console.log('Stack Penuh');
+      } else {
+        this.objStack.push(x);
+        console.log('Berhasil menambah ' + x);
+      }
+    }
 
-  first() {
-  }
+    stackPop() {
+        this.objStack.pop();
+    }
 
-  last() {
-  }
+    first() {
+        console.log(this.objStack[this.objStack.length-1]);
+    }
 
-  isEmpty() {
-  }
+    last() {
+        if (this.objStack[0] === null) {
+            console.log('Stack Kosong');
+        } else {
+            console.log(this.objStack[0]);
+        }
+    }
 
-  isFull() {
-  }
+    isEmpty() {
+        if (this.objStack.length !== this.max_size) {
+            console.log('Stack Kosong');
+        } else {
+            console.log('Stack Penuh');
+        }
+    }
 
-  stackPeep() {
-  }
+    isFull() {
+        if (this.objStack.length === this.max_size) {
+            console.log('Stack Penuh');
+        } else {
+            console.log('Stack Kosong');
+        }
+    }
 
-  // implement queue
-  queue() {
-  }
+    stackPeep() {
+        console.log(this.objStack[this.objStack.length-1]);
+    }
+
 }
 
-module.exports = Stack
+let stack1 = new Stack;
+stack1.stackPush('Mangga');
+stack1.showAll();
+stack1.stackPush('Melon');
+stack1.showAll();
+stack1.stackPush('Melon');
+stack1.showAll();
+stack1.stackPush('Melon');
+stack1.showAll();
+stack1.stackPush('Melon');
+stack1.showAll();
+stack1.stackPush('Melon');
+stack1.showAll();
+stack1.stackPush('Melon');
+stack1.isFull();
+stack1.isEmpty();
+
+// module.exports = Stack
