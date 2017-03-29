@@ -2,7 +2,8 @@
 
 // Your code implementation
 class Stack {
-  constructor() {
+  constructor(maxSize) {
+    this._MAX_SIZE = maxSize;
     this._stack = [];
   }
 
@@ -11,7 +12,10 @@ class Stack {
   }
 
   stackPush(x) {
-    this._stack.push(x);
+    if(!this.isFull())
+      this._stack.push(x);
+    else
+      console.log("Cannot Push, Stack is already full");
   }
 
   stackPop() {
@@ -41,7 +45,12 @@ class Stack {
   }
 
   isFull() {
-    // full nya size berapa?
+    // console.log("isfull " + this._MAX_SIZE);
+    if(this.size() >= this._MAX_SIZE)
+      return true;
+
+    console.log('here')
+    return false;
   }
 
   stackPeep() {
@@ -56,7 +65,7 @@ class Stack {
 
 
 // Buat stack baru
-let myStack = new Stack()
+let myStack = new Stack(4)
 
 // cek apakah stack sudah ada isi atau kosong?
 console.log(`The stack is empty? ${myStack.isEmpty()}`) // true
@@ -79,7 +88,27 @@ myStack.stackPush(15)
 // Lihat data paling atas
 myStack.stackPeep() // 15
 
+console.log(myStack.size());
 
+console.log(`The stack is full? ${myStack.isFull()}`) // true
+
+
+myStack.stackPush("lala")
+myStack.stackPeep()
+myStack.stackPush("baba")
+myStack.stackPeep()
+myStack.stackPush("ccaa")
+myStack.stackPeep()
+
+
+console.log(myStack.size());
+
+console.log(myStack.stackPop())
+myStack.stackPush("ccaa")
+myStack.stackPeep()
+
+
+/*
 // Lihat, kita menghapus data sata per satu
 console.log(myStack.stackPop())
 console.log(myStack.stackPop())
@@ -91,7 +120,7 @@ console.log(`The stack is empty? ${myStack.isEmpty()}`) // false
 
 // Coba hapus stack kosong, apa yang terjadi?
 console.log(myStack.stackPop())
-
+*/
 
 
 module.exports = Stack
