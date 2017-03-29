@@ -17,10 +17,11 @@ class Stack {
       console.log(`Error! container max capacity is ${this.maxSize}. Current capacity is ${this.container.length}`);
     } else {
       this.container.push(x);
+      console.log(`${x} added!`);
     }
   }
 
-
+  // remove last element
   stackPop() {
     if(this.container.length === 0) {
       console.log(`Stack is empty. you can't removed anything.`)
