@@ -16,7 +16,7 @@ class Queue {
 
     queuePush(x) {
       if(this.objQueue.length === this.max_size){
-        console.log('Queue Penuh');
+          console.log('Queue Penuh, Maksimal Jumlah Data '+this.max_size);
       } else {
         this.objQueue.push(x);
         console.log('Berhasil menambah ' + x);
@@ -24,7 +24,12 @@ class Queue {
     }
 
     queuePop() {
-        this.objQueue.shift();
+      if(this.objQueue.length === 0){
+        console.log('Tidak ada data di queue');
+      } else {
+        console.log('Berhasil hapus data ' +this.objQueue.shift());
+      }
+        ;
     }
 
     first() {
@@ -43,19 +48,19 @@ class Queue {
       if (this.objQueue.length === 0) {
           console.log('Queue Kosong');
       } else if(this.objQueue.length === this.max_size){
-          console.log('Queue Penuh');
+          console.log('Queue Penuh, Maksimal Jumlah Data '+this.max_size);
       } else {
-        console.log('Queue Ada Isinya')
+        console.log('Jumlah data di queue : ' +this.objQueue.length);
       }
     }
 
     isFull() {
       if (this.objQueue.length === this.max_size) {
-          console.log('Queue Penuh');
+          console.log('Queue Penuh, Maksimal Jumlah Data '+this.max_size);
       } else if(this.objQueue.length === 0){
           console.log('Queue Kosong');
       } else {
-        console.log('Queue Ada Isinya');
+        console.log('Jumlah data di queue : ' +this.objQueue.length);
       }
     }
 

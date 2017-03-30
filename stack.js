@@ -16,20 +16,25 @@ class Stack {
     }
 
     stackPush(x) {
-      if(this.objStack.length === this.max_size){
-        console.log('Stack Penuh');
-      } else {
-        this.objStack.push(x);
-        console.log('Berhasil menambah ' + x);
-      }
+        if (this.objStack.length === this.max_size) {
+            console.log('Stack Penuh, Maksimal Jumlah Data '+this.max_size);
+        } else {
+            this.objStack.push(x);
+            console.log('Berhasil menambah ' + x);
+        }
     }
 
     stackPop() {
-        this.objStack.pop();
+        if (this.objStack.length === 0) {
+            console.log('Tidak ada data di stack');
+        } else {
+            console.log('Berhasil hapus data ' + this.objStack.pop());
+        }
+
     }
 
     first() {
-        console.log(this.objStack[this.objStack.length-1]);
+        console.log(this.objStack[this.objStack.length - 1]);
     }
 
     last() {
@@ -43,25 +48,25 @@ class Stack {
     isEmpty() {
         if (this.objStack.length === 0) {
             console.log('Stack Kosong');
-        } else if(this.objStack.length === this.max_size){
-            console.log('Stack Penuh');
+        } else if (this.objStack.length === this.max_size) {
+            console.log('Stack Penuh, Maksimal Jumlah Data '+this.max_size);
         } else {
-          console.log('Stack Ada Isinya')
+            console.log('Jumlah data di stack : ' +this.objStack.length);
         }
     }
 
     isFull() {
         if (this.objStack.length === this.max_size) {
-            console.log('Stack Penuh');
-        } else if(this.objStack.length === 0){
+            console.log('Stack Penuh, Maksimal Jumlah Data '+this.max_size);
+        } else if (this.objStack.length === 0) {
             console.log('Stack Kosong');
         } else {
-          console.log('Stack Ada Isinya');
+            console.log('Jumlah data di stack : ' +this.objStack.length);
         }
     }
 
     stackPeep() {
-        console.log(this.objStack[this.objStack.length-1]);
+        return this.objStack[this.objStack.length - 1];
     }
 
 }
@@ -83,6 +88,8 @@ stack1.stackPush('Melon');
 stack1.showAll();
 stack1.stackPush('Melon');
 stack1.isFull();
+stack1.stackPop();
+stack1.showAll();
 
 
-// module.exports = Stack
+module.exports = Stack
