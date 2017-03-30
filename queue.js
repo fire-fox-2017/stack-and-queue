@@ -40,19 +40,23 @@ class Queue {
     }
 
     isEmpty() {
-        if (this.objQueue.length !== this.max_size) {
-            console.log('Queue Kosong');
-        } else {
-            console.log('Queue Penuh');
-        }
+      if (this.objQueue.length === 0) {
+          console.log('Queue Kosong');
+      } else if(this.objQueue.length === this.max_size){
+          console.log('Queue Penuh');
+      } else {
+        console.log('Queue Ada Isinya')
+      }
     }
 
     isFull() {
-        if (this.objQueue.length === this.max_size) {
-            console.log('Queue Penuh');
-        } else {
-            console.log('Queue Kosong');
-        }
+      if (this.objQueue.length === this.max_size) {
+          console.log('Queue Penuh');
+      } else if(this.objQueue.length === 0){
+          console.log('Queue Kosong');
+      } else {
+        console.log('Queue Ada Isinya');
+      }
     }
 
     queuePeep() {
@@ -61,6 +65,7 @@ class Queue {
 }
 
 let queue1 = new Queue;
+queue1.isEmpty();
 queue1.queuePush('Mangga');
 queue1.showAll();
 queue1.queuePush('Melon');
@@ -69,6 +74,7 @@ queue1.queuePush('Melon');
 queue1.showAll();
 queue1.queuePush('Melon');
 queue1.showAll();
+queue1.isEmpty();
 queue1.queuePush('Melon');
 queue1.showAll();
 queue1.queuePush('Melon');

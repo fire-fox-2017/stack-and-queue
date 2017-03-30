@@ -41,18 +41,22 @@ class Stack {
     }
 
     isEmpty() {
-        if (this.objStack.length !== this.max_size) {
+        if (this.objStack.length === 0) {
             console.log('Stack Kosong');
-        } else {
+        } else if(this.objStack.length === this.max_size){
             console.log('Stack Penuh');
+        } else {
+          console.log('Stack Ada Isinya')
         }
     }
 
     isFull() {
         if (this.objStack.length === this.max_size) {
             console.log('Stack Penuh');
-        } else {
+        } else if(this.objStack.length === 0){
             console.log('Stack Kosong');
+        } else {
+          console.log('Stack Ada Isinya');
         }
     }
 
@@ -63,12 +67,14 @@ class Stack {
 }
 
 let stack1 = new Stack;
+stack1.isEmpty();
 stack1.stackPush('Mangga');
 stack1.showAll();
 stack1.stackPush('Melon');
 stack1.showAll();
 stack1.stackPush('Melon');
 stack1.showAll();
+stack1.isEmpty();
 stack1.stackPush('Melon');
 stack1.showAll();
 stack1.stackPush('Melon');
@@ -77,6 +83,6 @@ stack1.stackPush('Melon');
 stack1.showAll();
 stack1.stackPush('Melon');
 stack1.isFull();
-stack1.isEmpty();
+
 
 // module.exports = Stack
