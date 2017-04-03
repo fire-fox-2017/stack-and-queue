@@ -42,6 +42,9 @@ class Stack {
   isFull() {
     return this.size() == this.MAX_SIZE;
   }
+  stackPeek(){
+    return this.arrStack[this.size()-1];
+  }
 
   // implement queue
   queue() {
@@ -53,10 +56,15 @@ console.log(`The stack is empty? ${myStack.isEmpty()}`);
 console.log(myStack.stackPush("JavaScript")+" "+myStack.arrStack);
 console.log(myStack.stackPush("Hacktiv8")+" "+myStack.arrStack);
 console.log(myStack.stackPush("Fire Fox")+" "+myStack.arrStack);
+console.log(myStack.size());
+console.log(myStack.stackPeek());
+console.log(`The stack is empty? ${myStack.isEmpty()}`);
 console.log(myStack.stackPush(15)+" "+myStack.arrStack);
 console.log(myStack.stackPush(1)+" "+myStack.arrStack);
 console.log(myStack.stackPush(2)+" \nLast data is : "+myStack.arrStack);
 
+console.log(myStack.stackPeek());
+console.log(myStack.size());
 console.log("Data pop : "+myStack.stackPop()+" \nLast data is : "+myStack.arrStack);
 console.log("Data pop : "+myStack.stackPop()+" \nLast data is : "+myStack.arrStack);
 console.log("Data pop : "+myStack.stackPop()+" \nLast data is : "+myStack.arrStack);
